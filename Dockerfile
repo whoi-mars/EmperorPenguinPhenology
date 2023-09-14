@@ -12,10 +12,7 @@ RUN git clone https://github.com/fabrylab/clickpoints.git /software/clickpoints
 RUN cd /software/clickpoints; git reset --hard 51ad5fd
 RUN pip install -e /software/clickpoints
 
-RUN pip install jupyter
-RUN pip install jupyterlab
-RUN pip install openpyxl tables
-RUN pip install pymc3
+RUN pip install jupyter jupyterlab openpyxl tables pandas==1.2.3 astropy==5.2.2 pymc3
 
 RUN mkdir /work && mkdir Supplement && cd work
 COPY ./Supplement /work/Supplement
